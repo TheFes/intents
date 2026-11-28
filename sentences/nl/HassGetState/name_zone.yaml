@@ -13,4 +13,4 @@ data:
     example: "is jan thuis"
     name_domains:
       - "person"
-    response: "one_yesno"
+    response: "one_zone"

@@ -16,6 +16,8 @@ data:
     response: "one"
   - sentences:
       - "wat is de waarde van [de|het] {name}"
+      - "wat is [de|het] {name}"
+      - "vertel me [de|het] {name}"
     example: "wat is de waarde van de Buitentemperatuur"
     name_domains:
       - sensor

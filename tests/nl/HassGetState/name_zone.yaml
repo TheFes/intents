@@ -6,6 +6,12 @@ entities:
   - name: "Jan"
     domain: "person"
     state: "thuis"
+  - name: "Piet"
+    domain: "person"
+    state: "home"
+  - name: "Klaas"
+    domain: "person"
+    state: "not_home"
 
 tests:
   - sentences:
@@ -17,3 +23,17 @@ tests:
       name: "Jan"
       state: "thuis"
     response: "Ja"
+
+  - sentences:
+      - "is piet op het werk"
+    slots:
+      name: "Piet"
+      state: "werk"
+    response: "Nee, die is thuis"
+
+  - sentences:
+      - "is klaas thuis"
+    slots:
+      name: "Klaas"
+      state: "thuis"
+    response: "Nee, die is niet thuis"
