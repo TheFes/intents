@@ -3,5 +3,4 @@ expansion_rules:
   here: (hier|in de[ze] (kamer|ruimte))
   change: (zet|mag|mogen|doe|verander|maak|schakel)
   to: (naar|op)
-  is: (zijn|is|staa(n|t)|zit[ten]|word[t|en]|lig(t|gen))
   all: (alle|elke|iedere|overal)
