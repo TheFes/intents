@@ -29,6 +29,7 @@ tests:
   # on/off domain
   - sentences:
       - "is de keukenlamp aan"
+      - "staat de keukenlamp aan"
     slots:
       name: "Keukenlamp"
       state: "on"
@@ -44,6 +45,7 @@ tests:
 
   - sentences:
       - "is de garagedeur open"
+      - "staat de garagedeur open"
     slots:
       name: "Garagedeur"
       state: "open"
@@ -58,6 +60,8 @@ tests:
 
   - sentences:
       - "is de voordeur op slot"
+      - "zit de voordeur op slot"
+      - "is de voordeur afgesloten"
     slots:
       name: "Voordeur"
       state: "locked"
@@ -66,6 +70,7 @@ tests:
   # binary sensor - opening
   - sentences:
       - "is de terrasdeur open"
+      - "is de terrasdeur geopend"
     slots:
       name: "Terrasdeur"
       state: "on"
@@ -74,6 +79,7 @@ tests:
   # binary sensor - occupancy
   - sentences:
       - "is de kantoorsensor bezet"
+      - "is de kantoorsensor in gebruik"
     slots:
       name: "Kantoorsensor"
       state: "on"

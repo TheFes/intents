@@ -9,21 +9,21 @@ language: "nl"
 data:
   # on/off domains (light, switch, fan)
   - sentences:
-      - "<is> [de|het] {name} {on_off_states:state}"
+      - "(<gs_be_one>|<gs_be_many>) [de|het] {name} {on_off_states:state}"
     example: "is de keukenlamp aan"
     name_domains: "on_off"
     response: "one_yesno"
 
   # covers and valves (open/dicht/...)
   - sentences:
-      - "<is> [de|het] {name} {cover_states:state}"
+      - "(<gs_be_one>|<gs_be_many>) [de|het] {name} {cover_states:state}"
     example: "is de garagedeur open"
     name_domains: "open_closed"
     response: "one_yesno"
 
   # locks (op slot/ontgrendeld)
   - sentences:
-      - "<is> [de|het] {name} {lock_states:state}"
+      - "(<gs_be_lock_one>|<gs_be_lock_many>) [de|het] {name} {lock_states:state}"
     example: "is de voordeur op slot"
     name_domains:
       - "lock"
@@ -31,7 +31,7 @@ data:
 
   # binary sensors - openings (open/dicht)
   - sentences:
-      - "<is> [de|het] {name} {bs_open_states:state}"
+      - "(<gs_be_one>|<gs_be_many>) [de|het] {name} {bs_open_states:state}"
     example: "is de voordeur open"
     name_domains:
       - "binary_sensor"
@@ -39,7 +39,7 @@ data:
 
   # binary sensors - occupancy
   - sentences:
-      - "<is> [de|het] {name} {bs_occupancy_states:state}"
+      - "<gs_be_occupancy> [de|het] {name} {bs_occupancy_states:state}"
     example: "is het kantoor bezet"
     name_domains:
       - "binary_sensor"

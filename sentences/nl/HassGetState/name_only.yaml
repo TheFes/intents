@@ -6,8 +6,9 @@
 language: "nl"
 data:
   - sentences:
-      - "<what_is> [de [huidige] <state> van] [de|het] {name}"
-      - "<how_is> [de|het] {name}"
+      - "wat is <gs_value_of> [de|het] {name}"
+      - "(wat|hoeveel|hoe (hoog|laag)) is [de|het] {name}"
+      - "(hoe is|hoe staat het met) [de|het] {name}"
     example: "wat is de buitentemperatuur"
     name_domains: "default"
     response: "one"

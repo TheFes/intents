@@ -5,27 +5,34 @@
 # - {domain}
 # - {device_class}
 # - {state}
+# Singular and plural are kept apart (is er een lamp / zijn er lampen).
+# Without a quantifier, "zijn de lampen uit" asks about all of them.
 
 language: "nl"
 data:
   # ---- covers (by device class) ----
   - sentences:
-      - "<are_any> {cover_classes:device_class} {cover_states:state}"
+      - "<gs_be_one> er een {cover_classes_one:device_class} {cover_states:state}"
+      - "<gs_be_many> er {cover_classes_many:device_class} {cover_states:state}"
     example: "is er een raam open"
     inferred_domain: "cover"
     response: "any"
   - sentences:
-      - "<are_all> {cover_classes:device_class} {cover_states:state}"
+      - "<gs_be_many> (alle|de) {cover_classes_many:device_class} {cover_states:state}"
+      - "<gs_be_one> {cover_classes_every_one:device_class} {cover_states:state}"
+      - "<gs_be_many> overal de {cover_classes_many:device_class} {cover_states:state}"
+      - "<gs_be_many> de {cover_classes_many:device_class} overal {cover_states:state}"
     example: "zijn alle ramen dicht"
     inferred_domain: "cover"
     response: "all"
   - sentences:
-      - "<which> {cover_classes:device_class} <is> {cover_states:state}"
+      - "welke {cover_classes_many:device_class} <gs_be_many> {cover_states:state}"
+      - "{cover_classes_which_one:device_class} <gs_be_one> {cover_states:state}"
     example: "welke ramen zijn open"
     inferred_domain: "cover"
     response: "which"
   - sentences:
-      - "<how_many> {cover_classes:device_class} <is> {cover_states:state}"
+      - "<how_many> {cover_classes_many:device_class} <gs_be_many> {cover_states:state}"
     example: "hoeveel ramen zijn open"
     inferred_domain: "cover"
     response: "how_many"

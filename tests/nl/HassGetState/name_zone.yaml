@@ -10,6 +10,8 @@ entities:
 tests:
   - sentences:
       - "is jan thuis"
+      - "is jan al thuis"
+      - "zit jan thuis"
       - "is jan in de zone thuis"
     slots:
       name: "Jan"

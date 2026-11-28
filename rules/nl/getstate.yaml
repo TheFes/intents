@@ -10,3 +10,40 @@ expansion_rules:
   are_all: <is> [<all>] [de]
   lockable: "[de|het] (slot|deur|poort|rolluik)[en]"
   switch: "[de|het] (schakelaar[s]|switch[es]|stopcontact[en])"
+
+  # ---- strict rules for HassGetState ----
+  # Verbs, singular and plural: "staat de lamp aan", "zitten de deuren op slot"
+  gs_be_one: (is|staat)
+  gs_be_many: (zijn|staan)
+  gs_be_lock_one: (is|zit)
+  gs_be_lock_many: (zijn|zitten)
+  gs_be_occupancy: (is|zijn)
+
+  # Nouns without article. *_one: singular, *_many: plural,
+  # *_which_one: welke/welk with the right gender, *_every_one: elke/elk
+  gs_light_one: (lamp|licht|verlichting)
+  gs_light_many: (lampen|lichten)
+  gs_light_which_one: (welke (lamp|verlichting)|welk licht)
+  gs_light_every_one: ((elke|iedere) lamp|(elk|ieder) licht)
+  gs_fan_one: (ventilator|fan)
+  gs_fan_many: (ventilatoren|ventilators|fans)
+  gs_fan_which_one: welke (ventilator|fan)
+  gs_fan_every_one: (elke|iedere) (ventilator|fan)
+  gs_switch_one: (schakelaar|switch|stopcontact)
+  gs_switch_many: (schakelaars|switches|stopcontacten)
+  gs_switch_which_one: (welke (schakelaar|switch)|welk stopcontact)
+  gs_switch_every_one: ((elke|iedere) (schakelaar|switch)|(elk|ieder) stopcontact)
+  gs_lock_one: (slot|deur|poort)
+  gs_lock_many: (sloten|deuren|poorten)
+  gs_lock_which_one: (welke (deur|poort)|welk slot)
+  gs_lock_every_one: ((elke|iedere) (deur|poort)|(elk|ieder) slot)
+
+  # Place after the device or state: preposition required
+  gs_in_area: (in|op) [de|het] {area}
+  gs_in_floor: (in|op) [de|het] {floor}
+
+  # Persons and zones; the preposition stays optional for "thuis"
+  gs_zone: "[al|nog] [(in|op|bij) [de|het]] {zone:state}"
+
+  # Name only
+  gs_value_of: de [huidige] (status|stand|waarde) van

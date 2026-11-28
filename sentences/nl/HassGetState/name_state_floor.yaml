@@ -10,7 +10,7 @@ language: "nl"
 data:
   # covers
   - sentences:
-      - "<is> [de|het] {name} {cover_states:state} [in|op|van|bij] [de|het] {floor}"
+      - "(<gs_be_one>|<gs_be_many>) [de|het] {name} {cover_states:state} <gs_in_floor>"
     example: "is de garagedeur open op de eerste verdieping"
     name_domains:
       - "cover"
@@ -18,7 +18,7 @@ data:
 
   # locks
   - sentences:
-      - "<is> [de|het] {name} {lock_states:state} [in|op|van|bij] [de|het] {floor}"
+      - "(<gs_be_lock_one>|<gs_be_lock_many>) [de|het] {name} {lock_states:state} <gs_in_floor>"
     example: "is de voordeur op slot op de eerste verdieping"
     name_domains:
       - "lock"
@@ -26,7 +26,7 @@ data:
 
   # binary sensors - openings
   - sentences:
-      - "<is> [de|het] {name} {bs_open_states:state} [in|op|van|bij] [de|het] {floor}"
+      - "(<gs_be_one>|<gs_be_many>) [de|het] {name} {bs_open_states:state} <gs_in_floor>"
     example: "is het slaapkamerraam open op de tweede verdieping"
     name_domains:
       - "binary_sensor"
@@ -34,7 +34,7 @@ data:
 
   # binary sensors - occupancy
   - sentences:
-      - "<is> [de|het] {name} {bs_occupancy_states:state} [in|op|van|bij] [de|het] {floor}"
+      - "<gs_be_occupancy> [de|het] {name} {bs_occupancy_states:state} <gs_in_floor>"
     example: "is de sensor bezet op de tweede verdieping"
     name_domains:
       - "binary_sensor"

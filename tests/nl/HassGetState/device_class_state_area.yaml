@@ -26,30 +26,28 @@ entities:
     area: "Slaapkamer"
     attributes:
       device_class: "window"
-
 tests:
   - sentences:
-      ["is er een slaapkamer raam open", "is er een raam open in de slaapkamer"]
+      - "is er een slaapkamer raam open"
+      - "is er een raam open in de slaapkamer"
+      - "zijn er ramen open in de slaapkamer"
+      - "zijn er slaapkamer ramen open"
     slots: { device_class: "window", state: "open", area: "Slaapkamer" }
     response: "Ja, Slaapkamerraam"
   - sentences:
-      [
-        "zijn alle slaapkamer ramen dicht",
-        "zijn alle ramen dicht in de slaapkamer",
-      ]
+      - "zijn alle slaapkamer ramen dicht"
+      - "zijn alle ramen dicht in de slaapkamer"
+      - "is elk raam dicht in de slaapkamer"
     slots: { device_class: "window", state: "closed", area: "Slaapkamer" }
     response: "Nee, Slaapkamerraam niet"
   - sentences:
-      [
-        "welke slaapkamer ramen zijn open",
-        "welke ramen zijn open in de slaapkamer",
-      ]
+      - "welke slaapkamer ramen zijn open"
+      - "welke ramen zijn open in de slaapkamer"
+      - "welk raam is open in de slaapkamer"
     slots: { device_class: "window", state: "open", area: "Slaapkamer" }
     response: "Slaapkamerraam"
   - sentences:
-      [
-        "hoeveel slaapkamer ramen zijn open",
-        "hoeveel ramen zijn open in de slaapkamer",
-      ]
+      - "hoeveel slaapkamer ramen zijn open"
+      - "hoeveel ramen zijn open in de slaapkamer"
     slots: { device_class: "window", state: "open", area: "Slaapkamer" }
     response: "1"

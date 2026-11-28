@@ -8,7 +8,7 @@ lists:
         out: "off"
   lock_states:
     values:
-      - in: (dicht|[op] gesloten|op slot|vergrendeld)
+      - in: (dicht|gesloten|afgesloten|op slot|vergrendeld)
         out: locked
-      - in: (open|geopend|niet (dicht|[op] gesloten|op slot|vergrendeld)|ontgrendeld)
+      - in: (open|geopend|ontgrendeld|van het slot|niet (dicht|gesloten|afgesloten|op slot|vergrendeld))
         out: unlocked

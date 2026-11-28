@@ -42,15 +42,99 @@ lists:
         out: shutter
       - in: ([het] [dak]raam|[de|alle] [dak]ramen)
         out: window
+  # Cover classes for HassGetState: singular without article (is er een raam open)
+  cover_classes_one:
+    values:
+      - in: "(luifel|markies|zonwering|zonnescherm|scherm)"
+        out: awning
+      - in: "(jaloezie|luxaflex)"
+        out: blind
+      - in: "(vitrage|gordijn|overgordijn)"
+        out: curtain
+      - in: "deur"
+        out: door
+      - in: "(garagedeur|garage deur)"
+        out: garage
+      - in: "(poort|hek)"
+        out: gate
+      - in: "(screen|rolgordijn|vouwgordijn)"
+        out: shade
+      - in: "(shutter|rolluik)"
+        out: shutter
+      - in: "(raam|dakraam)"
+        out: window
+  # Cover classes for HassGetState: plural without article (zijn alle ramen dicht)
+  cover_classes_many:
+    values:
+      - in: "(luifels|markiezen|zonneschermen|schermen)"
+        out: awning
+      - in: "(jaloezieën|luxaflex|lamellen)"
+        out: blind
+      - in: "(gordijnen|overgordijnen|vitrages)"
+        out: curtain
+      - in: "deuren"
+        out: door
+      - in: "(garagedeuren|garage deuren)"
+        out: garage
+      - in: "(poorten|hekken)"
+        out: gate
+      - in: "(screens|rolgordijnen|vouwgordijnen)"
+        out: shade
+      - in: "(shutters|rolluiken)"
+        out: shutter
+      - in: "(ramen|dakramen)"
+        out: window
+  # Cover classes for HassGetState: welke/welk with the right gender (welk raam staat open)
+  cover_classes_which_one:
+    values:
+      - in: "(welke (luifel|markies|zonwering)|welk (zonnescherm|scherm))"
+        out: awning
+      - in: "welke (jaloezie|luxaflex)"
+        out: blind
+      - in: "(welke vitrage|welk (gordijn|overgordijn))"
+        out: curtain
+      - in: "welke deur"
+        out: door
+      - in: "welke (garagedeur|garage deur)"
+        out: garage
+      - in: "(welke poort|welk hek)"
+        out: gate
+      - in: "(welke screen|welk (rolgordijn|vouwgordijn))"
+        out: shade
+      - in: "(welke shutter|welk rolluik)"
+        out: shutter
+      - in: "welk (raam|dakraam)"
+        out: window
+  # Cover classes for HassGetState: elke/elk with the right gender (is elk raam dicht)
+  cover_classes_every_one:
+    values:
+      - in: "((elke|iedere) (luifel|markies|zonwering)|(elk|ieder) (zonnescherm|scherm))"
+        out: awning
+      - in: "(elke|iedere) (jaloezie|luxaflex)"
+        out: blind
+      - in: "((elke|iedere) vitrage|(elk|ieder) (gordijn|overgordijn))"
+        out: curtain
+      - in: "(elke|iedere) deur"
+        out: door
+      - in: "(elke|iedere) (garagedeur|garage deur)"
+        out: garage
+      - in: "((elke|iedere) poort|(elk|ieder) hek)"
+        out: gate
+      - in: "((elke|iedere) screen|(elk|ieder) (rolgordijn|vouwgordijn))"
+        out: shade
+      - in: "((elke|iedere) shutter|(elk|ieder) rolluik)"
+        out: shutter
+      - in: "(elk|ieder) (raam|dakraam)"
+        out: window
   cover_states:
     values:
       - in: (open|geopend)
         out: open
       - in: (dicht|gesloten)
         out: closed
-      - in: (open aan het gaan|aan het (openen|open gaan))
+      - in: aan het (openen|opengaan|open gaan)
         out: opening
-      - in: (dicht aan het gaan|aan het (dicht gaan|sluiten))
+      - in: aan het (sluiten|dichtgaan|dicht gaan)
         out: closing
   # doe de gordijnen half open / sluit het rolluik half
   cover_position_half:

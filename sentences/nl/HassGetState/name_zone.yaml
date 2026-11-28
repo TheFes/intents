@@ -8,7 +8,8 @@
 language: "nl"
 data:
   - sentences:
-      - "<is> [de|het] {name} [in|op|van|bij] [de|het] [zone] {zone:state}"
+      - "(is|zit) {name} <gs_zone>"
+      - "is {name} [al|nog] in de zone {zone:state}"
     example: "is jan thuis"
     name_domains:
       - "person"

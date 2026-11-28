@@ -53,74 +53,106 @@ entities:
   - name: "Piet"
     domain: "person"
     state: "weg"
-
 tests:
-  # ---- lights: >4 matches -> truncated "en nog N" ----
-  - sentences: ["is er een lamp aan"]
+  - sentences:
+      - "is er een lamp aan"
+      - "zijn er lampen aan"
     slots: { state: "on" }
     response: "Ja, Lamp A, Lamp B, Lamp C en nog 2"
-  - sentences: ["zijn alle lampen uit"]
+  - sentences:
+      - "zijn alle lampen uit"
+      - "zijn de lampen uit"
+      - "is elke lamp uit"
+      - "zijn overal de lampen uit"
+      - "zijn de lampen overal uit"
     slots: { state: "off" }
     response: "Nee, Lamp A, Lamp B, Lamp C en nog 2 niet"
-  - sentences: ["welke lampen zijn aan"]
+  - sentences:
+      - "welke lampen zijn aan"
+      - "welke lamp is aan"
     slots: { state: "on" }
     response: "Lamp A, Lamp B, Lamp C en nog 2"
-  - sentences: ["hoeveel lampen zijn aan"]
+  - sentences:
+      - "hoeveel lampen zijn aan"
     slots: { state: "on" }
     response: "5"
-
-  # ---- fans: 2 matches -> "A en B" join ----
-  - sentences: ["is er een ventilator aan"]
+  - sentences:
+      - "is er een ventilator aan"
+      - "zijn er ventilatoren aan"
     slots: { state: "on" }
     response: "Ja, Plafondventilator en Zolderventilator"
-  - sentences: ["zijn alle ventilatoren uit"]
+  - sentences:
+      - "zijn alle ventilatoren uit"
+      - "is elke ventilator uit"
+      - "zijn overal de ventilatoren uit"
+      - "zijn de ventilatoren overal uit"
     slots: { state: "off" }
     response: "Nee, Plafondventilator en Zolderventilator niet"
-  - sentences: ["welke ventilatoren zijn aan"]
+  - sentences:
+      - "welke ventilatoren zijn aan"
+      - "welke ventilator is aan"
     slots: { state: "on" }
     response: "Plafondventilator en Zolderventilator"
-  - sentences: ["hoeveel ventilatoren zijn aan"]
+  - sentences:
+      - "hoeveel ventilatoren zijn aan"
     slots: { state: "on" }
     response: "2"
-
-  # ---- switches: single match ----
-  - sentences: ["is er een schakelaar aan"]
+  - sentences:
+      - "is er een schakelaar aan"
+      - "zijn er schakelaars aan"
     slots: { state: "on" }
     response: "Ja, Stopcontact schakelaar"
-  - sentences: ["zijn alle schakelaars uit"]
+  - sentences:
+      - "zijn alle schakelaars uit"
+      - "is elke schakelaar uit"
+      - "zijn overal de schakelaars uit"
+      - "zijn de schakelaars overal uit"
     slots: { state: "off" }
     response: "Nee, Stopcontact schakelaar niet"
-  - sentences: ["welke schakelaars zijn aan"]
+  - sentences:
+      - "welke schakelaars zijn aan"
+      - "welke schakelaar is aan"
     slots: { state: "on" }
     response: "Stopcontact schakelaar"
-  - sentences: ["hoeveel schakelaars zijn aan"]
+  - sentences:
+      - "hoeveel schakelaars zijn aan"
     slots: { state: "on" }
     response: "1"
-
-  # ---- locks ----
-  - sentences: ["is er een deur ontgrendeld"]
+  - sentences:
+      - "is er een deur ontgrendeld"
+      - "zijn er sloten ontgrendeld"
     slots: { state: "unlocked" }
     response: "Ja, Achterdeur"
-  - sentences: ["zijn alle deuren op slot"]
+  - sentences:
+      - "zijn alle deuren op slot"
+      - "is elke deur op slot"
+      - "zijn overal de sloten op slot"
+      - "zijn de sloten overal op slot"
     slots: { state: "locked" }
     response: "Nee, Achterdeur niet"
-  - sentences: ["welke deuren zijn ontgrendeld"]
+  - sentences:
+      - "welke deuren zijn ontgrendeld"
+      - "welke deur is ontgrendeld"
     slots: { state: "unlocked" }
     response: "Achterdeur"
-  - sentences: ["hoeveel deuren zijn op slot"]
+  - sentences:
+      - "hoeveel deuren zijn op slot"
     slots: { state: "locked" }
     response: "1"
-
-  # ---- people / zones ----
-  - sentences: ["is er iemand thuis"]
+  - sentences:
+      - "is er iemand thuis"
     slots: { state: "thuis" }
     response: "Ja, Jan"
-  - sentences: ["is iedereen thuis"]
+  - sentences:
+      - "is iedereen thuis"
     slots: { state: "thuis" }
     response: "Nee, Piet niet"
-  - sentences: ["wie is er thuis"]
+  - sentences:
+      - "wie is er thuis"
+      - "wie is er allemaal thuis"
     slots: { state: "thuis" }
     response: "Jan"
-  - sentences: ["hoeveel mensen zijn er thuis"]
+  - sentences:
+      - "hoeveel mensen zijn er thuis"
     slots: { state: "thuis" }
     response: "1"

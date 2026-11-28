@@ -6,31 +6,37 @@
 # - {domain}
 # - {device_class}
 # - {state}
+# Singular and plural are kept apart (is er een lamp / zijn er lampen).
+# Without a quantifier, "zijn de lampen uit" asks about all of them.
 
 language: "nl"
 data:
   # ---- covers (by device class) ----
   - sentences:
-      - "<are_any> {area} {cover_classes:device_class} {cover_states:state}"
-      - "<are_any> {cover_classes:device_class} {cover_states:state} [in|op|van|bij] [de|het] {area}"
-    example: "is er een raam open in de slaapkamer"
+      - "<gs_be_one> er een {cover_classes_one:device_class} {cover_states:state} <gs_in_area>"
+      - "<gs_be_many> er {cover_classes_many:device_class} {cover_states:state} <gs_in_area>"
+      - "<gs_be_one> er een {area} {cover_classes_one:device_class} {cover_states:state}"
+      - "<gs_be_many> er {area} {cover_classes_many:device_class} {cover_states:state}"
+    example: "is er een raam open in de keuken"
     inferred_domain: "cover"
     response: "any"
   - sentences:
-      - "<are_all> {area} {cover_classes:device_class} {cover_states:state}"
-      - "<are_all> {cover_classes:device_class} {cover_states:state} [in|op|van|bij] [de|het] {area}"
-    example: "zijn alle ramen dicht in de slaapkamer"
+      - "<gs_be_many> (alle|de) {cover_classes_many:device_class} {cover_states:state} <gs_in_area>"
+      - "<gs_be_one> {cover_classes_every_one:device_class} {cover_states:state} <gs_in_area>"
+      - "<gs_be_many> (alle|de) {area} {cover_classes_many:device_class} {cover_states:state}"
+    example: "zijn alle ramen dicht in de keuken"
     inferred_domain: "cover"
     response: "all"
   - sentences:
-      - "<which> {area} {cover_classes:device_class} <is> {cover_states:state}"
-      - "<which> {cover_classes:device_class} <is> {cover_states:state} [in|op|van|bij] [de|het] {area}"
-    example: "welke ramen zijn open in de slaapkamer"
+      - "welke {cover_classes_many:device_class} <gs_be_many> {cover_states:state} <gs_in_area>"
+      - "{cover_classes_which_one:device_class} <gs_be_one> {cover_states:state} <gs_in_area>"
+      - "welke {area} {cover_classes_many:device_class} <gs_be_many> {cover_states:state}"
+    example: "welke ramen zijn open in de keuken"
     inferred_domain: "cover"
     response: "which"
   - sentences:
-      - "<how_many> {area} {cover_classes:device_class} <is> {cover_states:state}"
-      - "<how_many> {cover_classes:device_class} <is> {cover_states:state} [in|op|van|bij] [de|het] {area}"
-    example: "hoeveel ramen zijn open in de slaapkamer"
+      - "<how_many> {cover_classes_many:device_class} <gs_be_many> {cover_states:state} <gs_in_area>"
+      - "<how_many> {area} {cover_classes_many:device_class} <gs_be_many> {cover_states:state}"
+    example: "hoeveel ramen zijn open in de keuken"
     inferred_domain: "cover"
     response: "how_many"

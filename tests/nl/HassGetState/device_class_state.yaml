@@ -13,17 +13,25 @@ entities:
     state: "closed"
     attributes:
       device_class: "window"
-
 tests:
-  - sentences: ["is er een raam open"]
+  - sentences:
+      - "is er een raam open"
+      - "zijn er ramen open"
     slots: { device_class: "window", state: "open" }
     response: "Ja, Woonkamerraam"
-  - sentences: ["zijn alle ramen dicht"]
+  - sentences:
+      - "zijn alle ramen dicht"
+      - "is elk raam dicht"
+      - "zijn overal de ramen dicht"
+      - "zijn de ramen overal dicht"
     slots: { device_class: "window", state: "closed" }
     response: "Nee, Woonkamerraam niet"
-  - sentences: ["welke ramen zijn open"]
+  - sentences:
+      - "welke ramen zijn open"
+      - "welk raam is open"
     slots: { device_class: "window", state: "open" }
     response: "Woonkamerraam"
-  - sentences: ["hoeveel ramen zijn open"]
+  - sentences:
+      - "hoeveel ramen zijn open"
     slots: { device_class: "window", state: "open" }
     response: "1"

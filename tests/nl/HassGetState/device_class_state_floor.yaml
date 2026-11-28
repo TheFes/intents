@@ -31,34 +31,28 @@ entities:
     area: "Slaapkamer"
     attributes:
       device_class: "window"
-
 tests:
   - sentences:
-      [
-        "is er een tweede verdieping raam open",
-        "is er een raam open op de tweede verdieping",
-      ]
+      - "is er een tweede verdieping raam open"
+      - "is er een raam open op de tweede verdieping"
+      - "zijn er ramen open in tweede verdieping"
+      - "zijn er tweede verdieping ramen open"
     slots: { device_class: "window", state: "open", floor: "Tweede verdieping" }
     response: "Ja, Slaapkamerraam"
   - sentences:
-      [
-        "zijn alle tweede verdieping ramen dicht",
-        "zijn alle ramen dicht op de tweede verdieping",
-      ]
-    slots:
-      { device_class: "window", state: "closed", floor: "Tweede verdieping" }
+      - "zijn alle tweede verdieping ramen dicht"
+      - "zijn alle ramen dicht op de tweede verdieping"
+      - "is elk raam dicht in tweede verdieping"
+    slots: { device_class: "window", state: "closed", floor: "Tweede verdieping" }
     response: "Nee, Slaapkamerraam niet"
   - sentences:
-      [
-        "welke tweede verdieping ramen zijn open",
-        "welke ramen zijn open op de tweede verdieping",
-      ]
+      - "welke tweede verdieping ramen zijn open"
+      - "welke ramen zijn open op de tweede verdieping"
+      - "welk raam is open in tweede verdieping"
     slots: { device_class: "window", state: "open", floor: "Tweede verdieping" }
     response: "Slaapkamerraam"
   - sentences:
-      [
-        "hoeveel tweede verdieping ramen zijn open",
-        "hoeveel ramen zijn open op de tweede verdieping",
-      ]
+      - "hoeveel tweede verdieping ramen zijn open"
+      - "hoeveel ramen zijn open op de tweede verdieping"
     slots: { device_class: "window", state: "open", floor: "Tweede verdieping" }
     response: "1"
