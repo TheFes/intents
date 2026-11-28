@@ -9,6 +9,8 @@ data:
       - "wat is <gs_value_of> [de|het] {name}"
       - "(wat|hoeveel|hoe (hoog|laag)) is [de|het] {name}"
       - "(hoe is|hoe staat het met) [de|het] {name}"
+      - "(vertel|geef) me [<gs_value_of>] [de|het] {name}"
+      - "weet je [de|het] {name}"
     example: "wat is de buitentemperatuur"
     name_domains: "default"
     response: "one"

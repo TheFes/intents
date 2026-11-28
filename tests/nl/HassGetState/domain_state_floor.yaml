@@ -3,10 +3,13 @@
 
 language: "nl"
 floors:
+  - name: "Boven"
   - name: "Begane grond"
   - name: "Eerste verdieping"
 
 areas:
+  - name: "Overloop"
+    floor: "Boven"
   - name: "Keuken"
     floor: "Begane grond"
   - name: "Gang"
@@ -15,6 +18,23 @@ areas:
     floor: "Eerste verdieping"
 
 entities:
+  # on floor Boven, for the floors used as an adverb
+  - name: "Overlooplamp"
+    domain: "light"
+    state: "on"
+    area: "Overloop"
+  - name: "Overloopventilator"
+    domain: "fan"
+    state: "on"
+    area: "Overloop"
+  - name: "Overloop schakelaar"
+    domain: "switch"
+    state: "on"
+    area: "Overloop"
+  - name: "Zolderdeurslot"
+    domain: "lock"
+    state: "unlocked"
+    area: "Overloop"
   # on a different floor: must be EXCLUDED from Begane grond queries
   - name: "Zolderlamp"
     domain: "light"
@@ -56,96 +76,231 @@ tests:
   - sentences:
       - "is er een begane grond lamp aan"
       - "is er een lamp aan op de begane grond"
-      - "zijn er lampen aan in begane grond"
+      - "zijn er lampen aan op de begane grond"
       - "zijn er begane grond lampen aan"
+      - "is er op de begane grond een lamp aan"
+      - "zijn er op de begane grond lampen aan"
     slots: { state: "on", floor: "Begane grond" }
     response: "Ja, Keukenlamp"
   - sentences:
       - "zijn alle begane grond lampen uit"
       - "zijn alle lampen uit op de begane grond"
-      - "is elke lamp uit in begane grond"
+      - "is elk licht uit op de begane grond"
+      - "zijn de lampen op de begane grond uit"
+      - "is elk licht op de begane grond uit"
+      - "zijn op de begane grond de lampen uit"
     slots: { state: "off", floor: "Begane grond" }
     response: "Nee, Keukenlamp niet"
   - sentences:
       - "welke begane grond lampen zijn aan"
       - "welke lampen zijn aan op de begane grond"
-      - "welke lamp is aan in begane grond"
+      - "welk licht is aan op de begane grond"
+      - "welke lampen zijn op de begane grond aan"
+      - "welke lampen op de begane grond zijn aan"
+      - "welk licht is op de begane grond aan"
     slots: { state: "on", floor: "Begane grond" }
     response: "Keukenlamp"
   - sentences:
       - "hoeveel begane grond lampen zijn aan"
       - "hoeveel lampen zijn aan op de begane grond"
+      - "hoeveel lampen zijn op de begane grond aan"
+      - "hoeveel lampen op de begane grond zijn aan"
+    slots: { state: "on", floor: "Begane grond" }
+    response: "1"
+  - sentences:
+      - "brandt er een lamp op de begane grond"
+      - "branden er lampen op de begane grond"
+    slots: { state: "on", floor: "Begane grond" }
+    response: "Ja, Keukenlamp"
+  - sentences:
+      - "branden de lampen op de begane grond"
+      - "brandt elk licht op de begane grond"
+    slots: { state: "on", floor: "Begane grond" }
+    response: "Nee, Keukenspot niet"
+  - sentences:
+      - "welke lampen branden op de begane grond"
+      - "welk licht brandt op de begane grond"
+    slots: { state: "on", floor: "Begane grond" }
+    response: "Keukenlamp"
+  - sentences:
+      - "hoeveel lampen branden op de begane grond"
     slots: { state: "on", floor: "Begane grond" }
     response: "1"
   - sentences:
       - "is er een begane grond ventilator aan"
       - "is er een ventilator aan op de begane grond"
-      - "zijn er ventilatoren aan in begane grond"
-      - "zijn er begane grond ventilatoren aan"
+      - "zijn er fans aan op de begane grond"
+      - "zijn er begane grond fans aan"
+      - "is er op de begane grond een fan aan"
+      - "zijn er op de begane grond fans aan"
     slots: { state: "on", floor: "Begane grond" }
     response: "Ja, Keukenventilator"
   - sentences:
       - "zijn alle begane grond ventilatoren uit"
       - "zijn alle ventilatoren uit op de begane grond"
-      - "is elke ventilator uit in begane grond"
+      - "is elke fan uit op de begane grond"
+      - "zijn de fans op de begane grond uit"
+      - "is elke fan op de begane grond uit"
+      - "zijn op de begane grond de fans uit"
     slots: { state: "off", floor: "Begane grond" }
     response: "Nee, Keukenventilator niet"
   - sentences:
       - "welke begane grond ventilatoren zijn aan"
       - "welke ventilatoren zijn aan op de begane grond"
-      - "welke ventilator is aan in begane grond"
+      - "welke fan is aan op de begane grond"
+      - "welke fans zijn op de begane grond aan"
+      - "welke fans op de begane grond zijn aan"
+      - "welke fan is op de begane grond aan"
     slots: { state: "on", floor: "Begane grond" }
     response: "Keukenventilator"
   - sentences:
       - "hoeveel begane grond ventilatoren zijn aan"
       - "hoeveel ventilatoren zijn aan op de begane grond"
+      - "hoeveel fans zijn op de begane grond aan"
+      - "hoeveel fans op de begane grond zijn aan"
     slots: { state: "on", floor: "Begane grond" }
     response: "1"
   - sentences:
       - "is er een begane grond schakelaar aan"
       - "is er een schakelaar aan op de begane grond"
-      - "zijn er schakelaars aan in begane grond"
-      - "zijn er begane grond schakelaars aan"
+      - "zijn er switches aan op de begane grond"
+      - "zijn er begane grond switches aan"
+      - "is er op de begane grond een switch aan"
+      - "zijn er op de begane grond switches aan"
     slots: { state: "on", floor: "Begane grond" }
     response: "Ja, Aanrecht schakelaar"
   - sentences:
       - "zijn alle begane grond schakelaars uit"
       - "zijn alle schakelaars uit op de begane grond"
-      - "is elke schakelaar uit in begane grond"
+      - "is elke switch uit op de begane grond"
+      - "zijn de switches op de begane grond uit"
+      - "is elke switch op de begane grond uit"
+      - "zijn op de begane grond de switches uit"
     slots: { state: "off", floor: "Begane grond" }
     response: "Nee, Aanrecht schakelaar niet"
   - sentences:
       - "welke begane grond schakelaars zijn aan"
       - "welke schakelaars zijn aan op de begane grond"
-      - "welke schakelaar is aan in begane grond"
+      - "welke switch is aan op de begane grond"
+      - "welke switches zijn op de begane grond aan"
+      - "welke switches op de begane grond zijn aan"
+      - "welke switch is op de begane grond aan"
     slots: { state: "on", floor: "Begane grond" }
     response: "Aanrecht schakelaar"
   - sentences:
       - "hoeveel begane grond schakelaars zijn aan"
       - "hoeveel schakelaars zijn aan op de begane grond"
+      - "hoeveel switches zijn op de begane grond aan"
+      - "hoeveel switches op de begane grond zijn aan"
     slots: { state: "on", floor: "Begane grond" }
     response: "1"
   - sentences:
       - "is er een begane grond deur ontgrendeld"
       - "is er een deur ontgrendeld op de begane grond"
-      - "zijn er sloten ontgrendeld in begane grond"
-      - "zijn er begane grond sloten ontgrendeld"
+      - "zijn er deuren ontgrendeld op de begane grond"
+      - "zijn er begane grond deuren ontgrendeld"
+      - "is er op de begane grond een deur ontgrendeld"
+      - "zijn er op de begane grond deuren ontgrendeld"
     slots: { state: "unlocked", floor: "Begane grond" }
     response: "Ja, Kastslot"
   - sentences:
       - "zijn alle begane grond deuren op slot"
       - "zijn alle deuren op slot op de begane grond"
-      - "is elke deur op slot in begane grond"
+      - "is elk slot op slot op de begane grond"
+      - "zijn de deuren op de begane grond op slot"
+      - "is elk slot op de begane grond op slot"
+      - "zijn op de begane grond de deuren op slot"
     slots: { state: "locked", floor: "Begane grond" }
     response: "Nee, Kastslot niet"
   - sentences:
       - "welke begane grond deuren zijn ontgrendeld"
       - "welke deuren zijn ontgrendeld op de begane grond"
-      - "welke deur is ontgrendeld in begane grond"
+      - "welk slot is ontgrendeld op de begane grond"
+      - "welke deuren zijn op de begane grond ontgrendeld"
+      - "welke deuren op de begane grond zijn ontgrendeld"
+      - "welk slot is op de begane grond ontgrendeld"
     slots: { state: "unlocked", floor: "Begane grond" }
     response: "Kastslot"
   - sentences:
       - "hoeveel begane grond deuren zijn op slot"
       - "hoeveel deuren zijn op slot op de begane grond"
+      - "hoeveel deuren zijn op de begane grond op slot"
+      - "hoeveel deuren op de begane grond zijn op slot"
     slots: { state: "locked", floor: "Begane grond" }
+    response: "1"
+  - sentences:
+      - "is er boven een lamp aan"
+      - "zijn er boven lampen aan"
+    slots: { state: "on", floor: "Boven" }
+    response: "Ja, Overlooplamp"
+  - sentences:
+      - "zijn de lampen boven uit"
+      - "zijn boven de lampen uit"
+    slots: { state: "off", floor: "Boven" }
+    response: "Nee, Overlooplamp niet"
+  - sentences:
+      - "welke lampen zijn boven aan"
+      - "welk licht is boven aan"
+    slots: { state: "on", floor: "Boven" }
+    response: "Overlooplamp"
+  - sentences:
+      - "hoeveel lampen zijn boven aan"
+    slots: { state: "on", floor: "Boven" }
+    response: "1"
+  - sentences:
+      - "is er boven een fan aan"
+      - "zijn er boven fans aan"
+    slots: { state: "on", floor: "Boven" }
+    response: "Ja, Overloopventilator"
+  - sentences:
+      - "zijn de fans boven uit"
+      - "zijn boven de fans uit"
+    slots: { state: "off", floor: "Boven" }
+    response: "Nee, Overloopventilator niet"
+  - sentences:
+      - "welke fans zijn boven aan"
+      - "welke fan is boven aan"
+    slots: { state: "on", floor: "Boven" }
+    response: "Overloopventilator"
+  - sentences:
+      - "hoeveel fans zijn boven aan"
+    slots: { state: "on", floor: "Boven" }
+    response: "1"
+  - sentences:
+      - "is er boven een switch aan"
+      - "zijn er boven switches aan"
+    slots: { state: "on", floor: "Boven" }
+    response: "Ja, Overloop schakelaar"
+  - sentences:
+      - "zijn de switches boven uit"
+      - "zijn boven de switches uit"
+    slots: { state: "off", floor: "Boven" }
+    response: "Nee, Overloop schakelaar niet"
+  - sentences:
+      - "welke switches zijn boven aan"
+      - "welke switch is boven aan"
+    slots: { state: "on", floor: "Boven" }
+    response: "Overloop schakelaar"
+  - sentences:
+      - "hoeveel switches zijn boven aan"
+    slots: { state: "on", floor: "Boven" }
+    response: "1"
+  - sentences:
+      - "is er boven een deur ontgrendeld"
+      - "zijn er boven deuren ontgrendeld"
+    slots: { state: "unlocked", floor: "Boven" }
+    response: "Ja, Zolderdeurslot"
+  - sentences:
+      - "zijn de deuren boven op slot"
+      - "zijn boven de deuren op slot"
+    slots: { state: "locked", floor: "Boven" }
+    response: "Nee, Zolderdeurslot niet"
+  - sentences:
+      - "welke deuren zijn boven ontgrendeld"
+      - "welk slot is boven ontgrendeld"
+    slots: { state: "unlocked", floor: "Boven" }
+    response: "Zolderdeurslot"
+  - sentences:
+      - "hoeveel deuren zijn boven ontgrendeld"
+    slots: { state: "unlocked", floor: "Boven" }
     response: "1"

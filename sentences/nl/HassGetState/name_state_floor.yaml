@@ -39,3 +39,29 @@ data:
     name_domains:
       - "binary_sensor"
     response: "one_yesno"
+
+  # floors used as an adverb, without preposition or article: is de voordeur beneden op slot
+  - sentences:
+      - "(<gs_be_one>|<gs_be_many>) [de|het] {name} {floor} {cover_states:state}"
+    example: "is de garagedeur beneden open"
+    name_domains:
+      - "cover"
+    response: "one_yesno"
+  - sentences:
+      - "(<gs_be_lock_one>|<gs_be_lock_many>) [de|het] {name} {floor} {lock_states:state}"
+    example: "is de voordeur beneden op slot"
+    name_domains:
+      - "lock"
+    response: "one_yesno"
+  - sentences:
+      - "(<gs_be_one>|<gs_be_many>) [de|het] {name} {floor} {bs_open_states:state}"
+    example: "is het dakraam boven open"
+    name_domains:
+      - "binary_sensor"
+    response: "one_yesno"
+  - sentences:
+      - "<gs_be_occupancy> [de|het] {name} {floor} {bs_occupancy_states:state}"
+    example: "is de bewegingssensor boven bezet"
+    name_domains:
+      - "binary_sensor"
+    response: "one_yesno"

@@ -14,6 +14,9 @@ tests:
       - "wat is de buitentemperatuur"
       - "wat is de huidige waarde van de buitentemperatuur"
       - "hoe is de buitentemperatuur"
+      - "vertel me de buitentemperatuur"
+      - "geef me de huidige waarde van de buitentemperatuur"
+      - "weet je de buitentemperatuur"
     slots:
       name: "Buitentemperatuur"
     response: "Buitentemperatuur is 42 °C"

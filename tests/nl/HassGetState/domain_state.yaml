@@ -62,14 +62,14 @@ tests:
   - sentences:
       - "zijn alle lampen uit"
       - "zijn de lampen uit"
-      - "is elke lamp uit"
+      - "is elk licht uit"
       - "zijn overal de lampen uit"
       - "zijn de lampen overal uit"
     slots: { state: "off" }
     response: "Nee, Lamp A, Lamp B, Lamp C en nog 2 niet"
   - sentences:
       - "welke lampen zijn aan"
-      - "welke lamp is aan"
+      - "welk licht is aan"
     slots: { state: "on" }
     response: "Lamp A, Lamp B, Lamp C en nog 2"
   - sentences:
@@ -77,20 +77,41 @@ tests:
     slots: { state: "on" }
     response: "5"
   - sentences:
+      - "brandt er een lamp"
+      - "branden er lampen"
+    slots: { state: "on" }
+    response: "Ja, Lamp A, Lamp B, Lamp C en nog 2"
+  - sentences:
+      - "branden de lampen"
+      - "brandt elk licht"
+      - "branden overal de lampen"
+      - "branden de lampen overal"
+    slots: { state: "on" }
+    response: "Nee, Lamp F niet"
+  - sentences:
+      - "welke lampen branden"
+      - "welk licht brandt"
+    slots: { state: "on" }
+    response: "Lamp A, Lamp B, Lamp C en nog 2"
+  - sentences:
+      - "hoeveel lampen branden"
+    slots: { state: "on" }
+    response: "5"
+  - sentences:
       - "is er een ventilator aan"
-      - "zijn er ventilatoren aan"
+      - "zijn er fans aan"
     slots: { state: "on" }
     response: "Ja, Plafondventilator en Zolderventilator"
   - sentences:
       - "zijn alle ventilatoren uit"
-      - "is elke ventilator uit"
-      - "zijn overal de ventilatoren uit"
-      - "zijn de ventilatoren overal uit"
+      - "is elke fan uit"
+      - "zijn overal de fans uit"
+      - "zijn de fans overal uit"
     slots: { state: "off" }
     response: "Nee, Plafondventilator en Zolderventilator niet"
   - sentences:
       - "welke ventilatoren zijn aan"
-      - "welke ventilator is aan"
+      - "welke fan is aan"
     slots: { state: "on" }
     response: "Plafondventilator en Zolderventilator"
   - sentences:
@@ -99,19 +120,19 @@ tests:
     response: "2"
   - sentences:
       - "is er een schakelaar aan"
-      - "zijn er schakelaars aan"
+      - "zijn er switches aan"
     slots: { state: "on" }
     response: "Ja, Stopcontact schakelaar"
   - sentences:
       - "zijn alle schakelaars uit"
-      - "is elke schakelaar uit"
-      - "zijn overal de schakelaars uit"
-      - "zijn de schakelaars overal uit"
+      - "is elke switch uit"
+      - "zijn overal de switches uit"
+      - "zijn de switches overal uit"
     slots: { state: "off" }
     response: "Nee, Stopcontact schakelaar niet"
   - sentences:
       - "welke schakelaars zijn aan"
-      - "welke schakelaar is aan"
+      - "welke switch is aan"
     slots: { state: "on" }
     response: "Stopcontact schakelaar"
   - sentences:
@@ -120,19 +141,19 @@ tests:
     response: "1"
   - sentences:
       - "is er een deur ontgrendeld"
-      - "zijn er sloten ontgrendeld"
+      - "zijn er deuren ontgrendeld"
     slots: { state: "unlocked" }
     response: "Ja, Achterdeur"
   - sentences:
       - "zijn alle deuren op slot"
-      - "is elke deur op slot"
-      - "zijn overal de sloten op slot"
-      - "zijn de sloten overal op slot"
+      - "is elk slot op slot"
+      - "zijn overal de deuren op slot"
+      - "zijn de deuren overal op slot"
     slots: { state: "locked" }
     response: "Nee, Achterdeur niet"
   - sentences:
       - "welke deuren zijn ontgrendeld"
-      - "welke deur is ontgrendeld"
+      - "welk slot is ontgrendeld"
     slots: { state: "unlocked" }
     response: "Achterdeur"
   - sentences:
@@ -141,6 +162,7 @@ tests:
     response: "1"
   - sentences:
       - "is er iemand thuis"
+      - "zijn er mensen thuis"
     slots: { state: "thuis" }
     response: "Ja, Jan"
   - sentences:
@@ -150,6 +172,7 @@ tests:
   - sentences:
       - "wie is er thuis"
       - "wie is er allemaal thuis"
+      - "wie zijn er thuis"
     slots: { state: "thuis" }
     response: "Jan"
   - sentences:

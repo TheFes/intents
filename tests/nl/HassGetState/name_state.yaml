@@ -6,6 +6,9 @@ entities:
   - name: "Keukenlamp"
     domain: "light"
     state: "on"
+  - name: "Kerstlampjes"
+    domain: "light"
+    state: "on"
   - name: "Hallamp"
     domain: "light"
     state: "off"
@@ -30,6 +33,7 @@ tests:
   - sentences:
       - "is de keukenlamp aan"
       - "staat de keukenlamp aan"
+      - "brandt de keukenlamp"
     slots:
       name: "Keukenlamp"
       state: "on"
@@ -82,5 +86,13 @@ tests:
       - "is de kantoorsensor in gebruik"
     slots:
       name: "Kantoorsensor"
+      state: "on"
+    response: "Ja"
+
+  - sentences:
+      - "branden de kerstlampjes"
+      - "staan de kerstlampjes aan"
+    slots:
+      name: "Kerstlampjes"
       state: "on"
     response: "Ja"

@@ -11,8 +11,8 @@ language: "nl"
 data:
   # ---- lights ----
   - sentences:
-      - "<gs_be_one> er een <gs_light_one> {on_off_states:state}"
-      - "<gs_be_many> er <gs_light_many> {on_off_states:state}"
+      - "<gs_be_one> er [nog] een <gs_light_one> {on_off_states:state}"
+      - "<gs_be_many> er [nog] <gs_light_many> {on_off_states:state}"
     example: "is er een lamp aan"
     inferred_domain: "light"
     response: "any"
@@ -25,21 +25,48 @@ data:
     inferred_domain: "light"
     response: "all"
   - sentences:
-      - "welke <gs_light_many> <gs_be_many> {on_off_states:state}"
-      - "<gs_light_which_one> <gs_be_one> {on_off_states:state}"
+      - "welke <gs_light_many> <gs_be_many> [er] {on_off_states:state}"
+      - "<gs_light_which_one> <gs_be_one> [er] {on_off_states:state}"
     example: "welke lampen zijn aan"
     inferred_domain: "light"
     response: "which"
   - sentences:
-      - "<how_many> <gs_light_many> <gs_be_many> {on_off_states:state}"
+      - "<how_many> <gs_light_many> <gs_be_many> [er] {on_off_states:state}"
     example: "hoeveel lampen zijn aan"
+    inferred_domain: "light"
+    response: "how_many"
+
+  # ---- lights with branden (state on) ----
+  - sentences:
+      - "{light_burn_one:state} er [nog] een <gs_light_one>"
+      - "{light_burn_many:state} er [nog] <gs_light_many>"
+    example: "brandt er een lamp"
+    inferred_domain: "light"
+    response: "any"
+  - sentences:
+      - "{light_burn_many:state} (alle|de) <gs_light_many>"
+      - "{light_burn_one:state} <gs_light_every_one>"
+      - "{light_burn_many:state} overal de <gs_light_many>"
+      - "{light_burn_many:state} de <gs_light_many> overal"
+    example: "branden alle lampen"
+    inferred_domain: "light"
+    response: "all"
+  - sentences:
+      - "welke <gs_light_many> {light_burn_many:state} [er]"
+      - "<gs_light_which_one> {light_burn_one:state} [er]"
+    example: "welke lampen branden er"
+    inferred_domain: "light"
+    response: "which"
+  - sentences:
+      - "<how_many> <gs_light_many> {light_burn_many:state} [er]"
+    example: "hoeveel lampen branden er"
     inferred_domain: "light"
     response: "how_many"
 
   # ---- fans ----
   - sentences:
-      - "<gs_be_one> er een <gs_fan_one> {on_off_states:state}"
-      - "<gs_be_many> er <gs_fan_many> {on_off_states:state}"
+      - "<gs_be_one> er [nog] een <gs_fan_one> {on_off_states:state}"
+      - "<gs_be_many> er [nog] <gs_fan_many> {on_off_states:state}"
     example: "is er een ventilator aan"
     inferred_domain: "fan"
     response: "any"
@@ -52,21 +79,21 @@ data:
     inferred_domain: "fan"
     response: "all"
   - sentences:
-      - "welke <gs_fan_many> <gs_be_many> {on_off_states:state}"
-      - "<gs_fan_which_one> <gs_be_one> {on_off_states:state}"
+      - "welke <gs_fan_many> <gs_be_many> [er] {on_off_states:state}"
+      - "<gs_fan_which_one> <gs_be_one> [er] {on_off_states:state}"
     example: "welke ventilatoren zijn aan"
     inferred_domain: "fan"
     response: "which"
   - sentences:
-      - "<how_many> <gs_fan_many> <gs_be_many> {on_off_states:state}"
+      - "<how_many> <gs_fan_many> <gs_be_many> [er] {on_off_states:state}"
     example: "hoeveel ventilatoren zijn aan"
     inferred_domain: "fan"
     response: "how_many"
 
   # ---- switches ----
   - sentences:
-      - "<gs_be_one> er een <gs_switch_one> {on_off_states:state}"
-      - "<gs_be_many> er <gs_switch_many> {on_off_states:state}"
+      - "<gs_be_one> er [nog] een <gs_switch_one> {on_off_states:state}"
+      - "<gs_be_many> er [nog] <gs_switch_many> {on_off_states:state}"
     example: "is er een schakelaar aan"
     inferred_domain: "switch"
     response: "any"
@@ -79,21 +106,21 @@ data:
     inferred_domain: "switch"
     response: "all"
   - sentences:
-      - "welke <gs_switch_many> <gs_be_many> {on_off_states:state}"
-      - "<gs_switch_which_one> <gs_be_one> {on_off_states:state}"
+      - "welke <gs_switch_many> <gs_be_many> [er] {on_off_states:state}"
+      - "<gs_switch_which_one> <gs_be_one> [er] {on_off_states:state}"
     example: "welke schakelaars zijn aan"
     inferred_domain: "switch"
     response: "which"
   - sentences:
-      - "<how_many> <gs_switch_many> <gs_be_many> {on_off_states:state}"
+      - "<how_many> <gs_switch_many> <gs_be_many> [er] {on_off_states:state}"
     example: "hoeveel schakelaars zijn aan"
     inferred_domain: "switch"
     response: "how_many"
 
   # ---- locks ----
   - sentences:
-      - "<gs_be_lock_one> er een <gs_lock_one> {lock_states:state}"
-      - "<gs_be_lock_many> er <gs_lock_many> {lock_states:state}"
+      - "<gs_be_lock_one> er [nog] een <gs_lock_one> {lock_states:state}"
+      - "<gs_be_lock_many> er [nog] <gs_lock_many> {lock_states:state}"
     example: "is er een deur ontgrendeld"
     inferred_domain: "lock"
     response: "any"
@@ -106,20 +133,21 @@ data:
     inferred_domain: "lock"
     response: "all"
   - sentences:
-      - "welke <gs_lock_many> <gs_be_lock_many> {lock_states:state}"
-      - "<gs_lock_which_one> <gs_be_lock_one> {lock_states:state}"
+      - "welke <gs_lock_many> <gs_be_lock_many> [er] {lock_states:state}"
+      - "<gs_lock_which_one> <gs_be_lock_one> [er] {lock_states:state}"
     example: "welke deuren zijn ontgrendeld"
     inferred_domain: "lock"
     response: "which"
   - sentences:
-      - "<how_many> <gs_lock_many> <gs_be_lock_many> {lock_states:state}"
+      - "<how_many> <gs_lock_many> <gs_be_lock_many> [er] {lock_states:state}"
     example: "hoeveel deuren zijn ontgrendeld"
     inferred_domain: "lock"
     response: "how_many"
 
   # ---- people / zones ----
   - sentences:
-      - "is er iemand <gs_zone>"
+      - "is er [al|nog] iemand <gs_zone>"
+      - "zijn er [al|nog] (mensen|personen) <gs_zone>"
     example: "is er iemand thuis"
     inferred_domain: "person"
     response: "any"
@@ -130,6 +158,7 @@ data:
     response: "all"
   - sentences:
       - "wie is [er] [allemaal] <gs_zone>"
+      - "wie zijn er [allemaal] <gs_zone>"
     example: "wie is er thuis"
     inferred_domain: "person"
     response: "which"

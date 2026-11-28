@@ -3,10 +3,13 @@
 
 language: "nl"
 floors:
+  - name: "Beneden"
   - name: "Eerste verdieping"
   - name: "Tweede verdieping"
 
 areas:
+  - name: "Bijkeuken"
+    floor: "Beneden"
   - name: "Garage"
     floor: "Eerste verdieping"
   - name: "Hal"
@@ -17,6 +20,23 @@ areas:
     floor: "Tweede verdieping"
 
 entities:
+  # on floor Beneden, for the floors used as an adverb
+  - name: "Bijkeukendeur"
+    domain: "cover"
+    state: "open"
+    area: "Bijkeuken"
+  - name: "Bijkeukenslot"
+    domain: "lock"
+    state: "locked"
+    area: "Bijkeuken"
+  - name: "Bijkeukenraam"
+    domain: "binary_sensor"
+    state: "on"
+    area: "Bijkeuken"
+  - name: "Bijkeukensensor"
+    domain: "binary_sensor"
+    state: "on"
+    area: "Bijkeuken"
   - name: "Garagedeur"
     domain: "cover"
     state: "open"
@@ -65,4 +85,37 @@ tests:
       name: "Bewegingssensor"
       state: "on"
       floor: "Tweede verdieping"
+    response: "Ja"
+
+  # floors used as an adverb
+  - sentences:
+      - "is de bijkeukendeur beneden open"
+    slots:
+      name: "Bijkeukendeur"
+      state: "open"
+      floor: "Beneden"
+    response: "Ja"
+
+  - sentences:
+      - "zit het bijkeukenslot beneden op slot"
+    slots:
+      name: "Bijkeukenslot"
+      state: "locked"
+      floor: "Beneden"
+    response: "Ja"
+
+  - sentences:
+      - "staat het bijkeukenraam beneden open"
+    slots:
+      name: "Bijkeukenraam"
+      state: "on"
+      floor: "Beneden"
+    response: "Ja"
+
+  - sentences:
+      - "is de bijkeukensensor beneden bezet"
+    slots:
+      name: "Bijkeukensensor"
+      state: "on"
+      floor: "Beneden"
     response: "Ja"

@@ -12,3 +12,12 @@ lists:
         out: locked
       - in: (open|geopend|ontgrendeld|van het slot|niet (dicht|gesloten|afgesloten|op slot|vergrendeld))
         out: unlocked
+  # lights: "brandt er nog een lamp", "welke lampen branden er"
+  light_burn_one:
+    values:
+      - in: brandt
+        out: "on"
+  light_burn_many:
+    values:
+      - in: branden
+        out: "on"

@@ -49,96 +49,155 @@ tests:
   - sentences:
       - "is er een keuken lamp aan"
       - "is er een lamp aan in de keuken"
-      - "zijn er lampen aan in de keuken"
+      - "zijn er lampen aan in keuken"
       - "zijn er keuken lampen aan"
+      - "is er in keuken een lamp aan"
+      - "zijn er in keuken lampen aan"
     slots: { state: "on", area: "Keuken" }
     response: "Ja, Keukenlamp"
   - sentences:
       - "zijn alle keuken lampen uit"
       - "zijn alle lampen uit in de keuken"
-      - "is elke lamp uit in de keuken"
+      - "is elk licht uit in keuken"
+      - "zijn de lampen in keuken uit"
+      - "is elk licht in keuken uit"
+      - "zijn in keuken de lampen uit"
     slots: { state: "off", area: "Keuken" }
     response: "Nee, Keukenlamp niet"
   - sentences:
       - "welke keuken lampen zijn aan"
       - "welke lampen zijn aan in de keuken"
-      - "welke lamp is aan in de keuken"
+      - "welk licht is aan in keuken"
+      - "welke lampen zijn in keuken aan"
+      - "welke lampen in keuken zijn aan"
+      - "welk licht is in keuken aan"
     slots: { state: "on", area: "Keuken" }
     response: "Keukenlamp"
   - sentences:
       - "hoeveel keuken lampen zijn aan"
       - "hoeveel lampen zijn aan in de keuken"
+      - "hoeveel lampen zijn in keuken aan"
+      - "hoeveel lampen in keuken zijn aan"
+    slots: { state: "on", area: "Keuken" }
+    response: "1"
+  - sentences:
+      - "brandt er een lamp in keuken"
+      - "branden er lampen in keuken"
+    slots: { state: "on", area: "Keuken" }
+    response: "Ja, Keukenlamp"
+  - sentences:
+      - "branden de lampen in keuken"
+      - "brandt elk licht in keuken"
+    slots: { state: "on", area: "Keuken" }
+    response: "Nee, Keukenspot niet"
+  - sentences:
+      - "welke lampen branden in keuken"
+      - "welk licht brandt in keuken"
+    slots: { state: "on", area: "Keuken" }
+    response: "Keukenlamp"
+  - sentences:
+      - "hoeveel lampen branden in keuken"
     slots: { state: "on", area: "Keuken" }
     response: "1"
   - sentences:
       - "is er een keuken ventilator aan"
       - "is er een ventilator aan in de keuken"
-      - "zijn er ventilatoren aan in de keuken"
-      - "zijn er keuken ventilatoren aan"
+      - "zijn er fans aan in keuken"
+      - "zijn er keuken fans aan"
+      - "is er in keuken een fan aan"
+      - "zijn er in keuken fans aan"
     slots: { state: "on", area: "Keuken" }
     response: "Ja, Keukenventilator"
   - sentences:
       - "zijn alle keuken ventilatoren uit"
       - "zijn alle ventilatoren uit in de keuken"
-      - "is elke ventilator uit in de keuken"
+      - "is elke fan uit in keuken"
+      - "zijn de fans in keuken uit"
+      - "is elke fan in keuken uit"
+      - "zijn in keuken de fans uit"
     slots: { state: "off", area: "Keuken" }
     response: "Nee, Keukenventilator niet"
   - sentences:
       - "welke keuken ventilatoren zijn aan"
       - "welke ventilatoren zijn aan in de keuken"
-      - "welke ventilator is aan in de keuken"
+      - "welke fan is aan in keuken"
+      - "welke fans zijn in keuken aan"
+      - "welke fans in keuken zijn aan"
+      - "welke fan is in keuken aan"
     slots: { state: "on", area: "Keuken" }
     response: "Keukenventilator"
   - sentences:
       - "hoeveel keuken ventilatoren zijn aan"
       - "hoeveel ventilatoren zijn aan in de keuken"
+      - "hoeveel fans zijn in keuken aan"
+      - "hoeveel fans in keuken zijn aan"
     slots: { state: "on", area: "Keuken" }
     response: "1"
   - sentences:
       - "is er een keuken schakelaar aan"
       - "is er een schakelaar aan in de keuken"
-      - "zijn er schakelaars aan in de keuken"
-      - "zijn er keuken schakelaars aan"
+      - "zijn er switches aan in keuken"
+      - "zijn er keuken switches aan"
+      - "is er in keuken een switch aan"
+      - "zijn er in keuken switches aan"
     slots: { state: "on", area: "Keuken" }
     response: "Ja, Aanrecht schakelaar"
   - sentences:
       - "zijn alle keuken schakelaars uit"
       - "zijn alle schakelaars uit in de keuken"
-      - "is elke schakelaar uit in de keuken"
+      - "is elke switch uit in keuken"
+      - "zijn de switches in keuken uit"
+      - "is elke switch in keuken uit"
+      - "zijn in keuken de switches uit"
     slots: { state: "off", area: "Keuken" }
     response: "Nee, Aanrecht schakelaar niet"
   - sentences:
       - "welke keuken schakelaars zijn aan"
       - "welke schakelaars zijn aan in de keuken"
-      - "welke schakelaar is aan in de keuken"
+      - "welke switch is aan in keuken"
+      - "welke switches zijn in keuken aan"
+      - "welke switches in keuken zijn aan"
+      - "welke switch is in keuken aan"
     slots: { state: "on", area: "Keuken" }
     response: "Aanrecht schakelaar"
   - sentences:
       - "hoeveel keuken schakelaars zijn aan"
       - "hoeveel schakelaars zijn aan in de keuken"
+      - "hoeveel switches zijn in keuken aan"
+      - "hoeveel switches in keuken zijn aan"
     slots: { state: "on", area: "Keuken" }
     response: "1"
   - sentences:
       - "is er een gang deur ontgrendeld"
       - "is er een deur ontgrendeld in de gang"
-      - "zijn er sloten ontgrendeld in de gang"
-      - "zijn er gang sloten ontgrendeld"
+      - "zijn er deuren ontgrendeld in gang"
+      - "zijn er gang deuren ontgrendeld"
+      - "is er in gang een deur ontgrendeld"
+      - "zijn er in gang deuren ontgrendeld"
     slots: { state: "unlocked", area: "Gang" }
     response: "Ja, Kastslot"
   - sentences:
       - "zijn alle gang deuren op slot"
       - "zijn alle deuren op slot in de gang"
-      - "is elke deur op slot in de gang"
+      - "is elk slot op slot in gang"
+      - "zijn de deuren in gang op slot"
+      - "is elk slot in gang op slot"
+      - "zijn in gang de deuren op slot"
     slots: { state: "locked", area: "Gang" }
     response: "Nee, Kastslot niet"
   - sentences:
       - "welke gang deuren zijn ontgrendeld"
       - "welke deuren zijn ontgrendeld in de gang"
-      - "welke deur is ontgrendeld in de gang"
+      - "welk slot is ontgrendeld in gang"
+      - "welke deuren zijn in gang ontgrendeld"
+      - "welke deuren in gang zijn ontgrendeld"
+      - "welk slot is in gang ontgrendeld"
     slots: { state: "unlocked", area: "Gang" }
     response: "Kastslot"
   - sentences:
       - "hoeveel gang deuren zijn op slot"
       - "hoeveel deuren zijn op slot in de gang"
+      - "hoeveel deuren zijn in gang op slot"
+      - "hoeveel deuren in gang zijn op slot"
     slots: { state: "locked", area: "Gang" }
     response: "1"

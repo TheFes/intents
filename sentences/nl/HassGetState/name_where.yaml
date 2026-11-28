@@ -6,8 +6,9 @@
 language: "nl"
 data:
   - sentences:
-      - "waar is {name}"
-      - "waar bevindt {name} zich"
+      - "waar (is|zit) {name} [nu]"
+      - "waar bevindt {name} zich [nu]"
+      - "waar kan ik {name} vinden"
     example: "waar is jan"
     name_domains:
       - "person"
